@@ -20,7 +20,7 @@ public class videoplayersteps extends BaseSetup {
 	   @When("^Play promo$")
 	    public void play_promo() throws Throwable {
 		   a.moveToElement(shodetailpage.PromoCards.get(0)).click().build().perform();
-		   Thread.sleep(2000);
+		   Thread.sleep(5000);
 	    }
 
 	   @Then("^Pause Video at (.+) and play agian$")

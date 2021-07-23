@@ -1,4 +1,8 @@
 package Resources;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -20,8 +24,10 @@ import javax.mail.internet.MimeMultipart;
 
 public class AutomatedEmail
 {
-	
-		public static  void sendemail() {
+	static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+    static Date date = new Date();  
+   
+		public static  void sendemail() throws IOException {
 
 			Properties props = new Properties();
 			 
@@ -62,46 +68,65 @@ public class AutomatedEmail
 				message.setFrom(new InternetAddress("sameer.g@contus.in"));
 	 
 				// Set the recipient address
-				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("gracediana.s@contus.in"));
+				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,gracediana.s@contus.in,naveen.l@contus.in,shanthini.b@contus.in,ramya.k@contus.in"));
+				
 	            
-	                        // Add the subject link
+	            // Add the subject link
 				message.setSubject("GudSho Web: Automation Test Report");
 	 
 				// Create object to add multimedia type content
 				BodyPart messageBodyPart1 = new MimeBodyPart();
 	 
 				// Set the body of email
-				messageBodyPart1.setText("Please find the attached GudSho Web Automation Report for your kind reference");
+				messageBodyPart1.setText("Please find the attached GudSho Web Automation Report for your kind reference."
+						+ "Note:Please download the attached screenshots and open in browser.");
 	 
 				// Create another object to add another content
 				MimeBodyPart messageBodyPart2 = new MimeBodyPart();
+				MimeBodyPart messageBodyPart3 = new MimeBodyPart();
+				
 	 
 				// Mention the file which you want to send
-				String filename = "C:\\Users\\user\\git\\GudShoWebAutomation\\WebAutomation\\Report\\Spark.html";
-	 
+				String filename = System.getProperty("user.dir")+"./Report/Spark.html";
+				String filename1 = System.getProperty("user.dir")+"./target/cucumber-reports/htmlreports.html";
+					 
 				// Create data source and pass the filename
 				DataSource source = new FileDataSource(filename);
+				DataSource source1 = new FileDataSource(filename1);
+				
 	 
 				// set the handler
 				messageBodyPart2.setDataHandler(new DataHandler(source));
+				messageBodyPart3.setDataHandler(new DataHandler(source1));
+				
 	 
 				// set the file
-				messageBodyPart2.setFileName("GudSho_Web_Automation");
+				messageBodyPart2.setFileName("GudSho_Web_Automation"+formatter.format(date));
+				messageBodyPart3.setFileName("GudSho_Web_JVM_Automation"+formatter.format(date));
+			
 	 
 				// Create object of MimeMultipart class
 				Multipart multipart = new MimeMultipart();
+				
 	 
 				// add body part 1
 				multipart.addBodyPart(messageBodyPart2);
+				multipart.addBodyPart(messageBodyPart3);
+				
 	 
 				// add body part 2
 				multipart.addBodyPart(messageBodyPart1);
+				multipart.addBodyPart(messageBodyPart3);
+				messageBodyPart3.attachFile(filename1);
+				
 	 
 				// set the content
 				message.setContent(multipart);
+				
 	 
 				// finally send the email
 				Transport.send(message);
+				
 	 
 				System.out.println("=====Email Sent=====");
 	 

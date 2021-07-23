@@ -4,6 +4,7 @@ package Runner;
 
 import java.io.File;
 
+
 import java.io.IOException;
 
 import io.cucumber.junit.CucumberOptions;
@@ -24,13 +25,13 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features/frontend/Homepage.feature",
+	@CucumberOptions(features= "src/test/resources/Features/frontend",
 	glue={"steps"},
-	tags="@test",
 	plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 			  "pretty","json:target/cucumber-reports/Cucumber.json", 
 			  "junit:target/cucumber-reports/Cucumber.xml",
-			  "html:target/cucumber-reports/htmlreports.html"},
+			  "html:target/cucumber-reports/htmlreports.html",
+			  "rerun:target/rerun.txt"},
 			   monochrome=true)
 
       
@@ -60,12 +61,17 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 			configuration.setSortingMethod(SortingMethod.NATURAL);
 			ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
 			reportBuilder.generateReports();
-			/*Runtime r=Runtime.getRuntime();
+			Runtime r=Runtime.getRuntime();
 			r.addShutdownHook(new Thread(){
 				public void run() {
-					AutomatedEmail.sendemail();
+					try {
+						AutomatedEmail.sendemail();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			});*/
+			});
 			
 			
 			

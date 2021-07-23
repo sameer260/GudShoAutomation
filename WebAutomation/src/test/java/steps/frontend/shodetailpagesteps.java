@@ -121,7 +121,7 @@ public class shodetailpagesteps extends BaseSetup{
         shodetailpage.StudioLink.click();
         wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
         String studionamestudiodetailpage=studiodetailpage.StudioNameInStudioPage.getText();
-        assertEquals(Studionameinshodetailpage,studionamestudiodetailpage);
+        assertTrue(Studionameinshodetailpage.equalsIgnoreCase(studionamestudiodetailpage));
     }
     @Then("^Hover on (.+) card and share promo (.+) using all shares$")
     public void hover_on_card_and_share_promo_using_all_shares(String promoname, String sharetype) throws Throwable {

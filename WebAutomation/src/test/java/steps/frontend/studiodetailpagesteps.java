@@ -97,21 +97,20 @@ public class studiodetailpagesteps  extends BaseSetup{
 			String actualsho=studiodetailpage.ShonameofcardsonGeners.getAttribute("alt");
 			log.info(actualsho);
 			studiodetailpage.selectshocardfromgenre.click();
-			String expectedsho=shodetailpage.ShoNameonShoDetailPage.getText();
+			String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 			log.info(expectedsho);
 			assertTrue(actualsho.equalsIgnoreCase(expectedsho));
 	      
 		}
 		@When("^verfiy promo player$")
 		   public void verfiy_promo_player() throws Throwable {
-		String actualpromotext= studiodetailpage.verifypromonameonstudiopage.getText();
+		       String actualpromotext= studiodetailpage.verifypromonameonstudiopage.getText();
 		       log.info(actualpromotext);
-		       wait.until(ExpectedConditions.visibilityOf(studiodetailpage.clickpromo));
 		       studiodetailpage.clickpromo.click();
-		       Thread.sleep(1000);
+		       Thread.sleep(10000);
 		       Actions a=new Actions(driver);
 		       a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
-		String Expectedpromotext=videoplayer.Promoname();
+		       String Expectedpromotext=videoplayer.Promoname();
 		       log.info(Expectedpromotext);
 		assertEquals(actualpromotext,Expectedpromotext);
 
@@ -127,7 +126,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 		log.info(actualsho);
 		a.moveToElement(studiodetailpage.selectshonamefromstudiopage).build().perform();
 		studiodetailpage.shocard1.click();
-		String expectedsho=shodetailpage.ShoNameonShoDetailPage.getText();
+		String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 		log.info(expectedsho);
 		assertTrue(actualsho.equalsIgnoreCase(expectedsho));
 

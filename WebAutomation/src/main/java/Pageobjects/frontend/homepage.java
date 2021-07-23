@@ -52,7 +52,8 @@ public class homepage extends BaseSetup {
 	private static List<WebElement> AutoSuggestiveDropdown;
 	
 	@FindBy(xpath="//span[@class='cursor']")
-	private static WebElement CookieClose;
+	public
+	static WebElement CookieClose;
 	
 	@FindBy(xpath="button is-default blue-stroke small mat-button mat-button-base")
 	private static WebElement CookieGotItButton;
@@ -139,8 +140,6 @@ public class homepage extends BaseSetup {
 	
 	
 	public static void HomePageSearch(String shoseriesorstudioname) throws InterruptedException {
-		
-		homepage.CookieClose.click();
 		homepage.SearchICon.click();
 		homepage.HomePageSearch.sendKeys(shoseriesorstudioname);
 		log.info("Sent Text in the Home Page is "+shoseriesorstudioname);

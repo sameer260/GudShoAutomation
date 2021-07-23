@@ -1,4 +1,4 @@
-@paywall
+@Paywall
 Feature: Paywall Scenarios
 
    
@@ -32,6 +32,23 @@ Feature: Paywall Scenarios
       | ShoName  |
       | Talent   |
       
+   Scenario Outline: Search any Sho and Share the Sho
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Click on Share button
+    Then Check share popup is displayed with social ions
+
+    Examples: 
+      | ShoName |
+      | Talent  |
+  
+  Scenario Outline: Search any Sho and Share promo
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Share <PromoName> and verify share popup and share icons are displayed
+
+    Examples: 
+      | ShoName | PromoName                     |
+      | Talent  | Vakeel Sab Theatrical Trailer |
+      
    
   Scenario Outline: Follow Button mini popup validation
     Given Search any studio <studioname> and verify it should redirected to correct page
@@ -41,31 +58,4 @@ Feature: Paywall Scenarios
     Examples: 
       | studioname      |
       | santii's studio |
-      
-      
-  Scenario Outline: Search any Sho and Share the Sho without SignIn
-    Given Search any <ShoName> and verfiy its redirected to correct page
-    When Click on Share button
-    Then Share the <ShareType> using all social icons
-
-    Examples: 
-      | ShoName | ShareType  |
-      | Talent  | shoshare   |
-      
        
-   Scenario Outline: Search any Sho and Share promo without login
-    Given Search any <ShoName> and verfiy its redirected to correct page
-    Then Hover on <PromoName> card and share promo <ShareType> using all shares
-
-    Examples: 
-      | ShoName | PromoName                     | ShareType  |
-      | Talent  | Vakeel Sab Theatrical Trailer | promoshare |
-      
-      
-   Scenario Outline: Search any Studio and share studio
-      Given Search any studio <StudioName> and verify it should redirected to correct page
-      Then Share studio with all share icons
-      
-      Examples:
-      |StudioName|
-      |Sameer    | 

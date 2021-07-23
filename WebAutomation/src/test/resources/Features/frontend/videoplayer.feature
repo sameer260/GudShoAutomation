@@ -1,3 +1,4 @@
+@VideoPlayer
 Feature: Video Player Scenarios
 
 Scenario Outline: Check all the player like Play,Pause,Forwad and Backward Actions for promo Player

@@ -1,3 +1,4 @@
+@ShodetailPage
 Feature: sho detail page scenarios
 
   Scenario Outline: Search any sho and buy this sho and Play

@@ -49,7 +49,7 @@ public class commonSteps extends BaseSetup {
 		wait.until(ExpectedConditions.visibilityOf(shodetailpage.ShoNameonShoDetailPage));
 		String shonameonshodetailpage = shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 		log.info(shonameonshodetailpage);
-		assertEquals(shonameonshodetailpage, shoname);
+		assertTrue(shonameonshodetailpage.equalsIgnoreCase(shoname));
 	}
 
 }

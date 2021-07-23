@@ -35,8 +35,8 @@ public class BaseSetup
     	
     	if(browsername.contains("headless"))
     	{
-    	//options.addArguments("headless");
-    	//options.addArguments("window-size=1400,600");
+    	options.addArguments("headless");
+    	options.addArguments("window-size=1080");
     	
     	
     		

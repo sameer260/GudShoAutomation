@@ -1,3 +1,4 @@
+@StudioPage
 Feature: Studio Detail page Scenarios
 
  Scenario Outline: Search any Studio and share studio
@@ -27,7 +28,7 @@ Feature: Studio Detail page Scenarios
       | StudioName   |
       | Trail Studio |   
       
-      
+     
    Scenario Outline: Search any Studio and play promo  and close promo player and check its redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When verfiy promo player
@@ -46,7 +47,7 @@ Feature: Studio Detail page Scenarios
       | StudioName  |
       | Trail Studio|
 
- @ramya
+ 
   Scenario Outline: Search any Studio and select any genre and verify sho card
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click <genere> and verify sho card redirection
