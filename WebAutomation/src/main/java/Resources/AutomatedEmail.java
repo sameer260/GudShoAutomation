@@ -78,8 +78,9 @@ public class AutomatedEmail
 				BodyPart messageBodyPart1 = new MimeBodyPart();
 	 
 				// Set the body of email
-				messageBodyPart1.setText("Please find the attached GudSho Web Automation Report for your kind reference."
-						+ "Note:Please download the attached screenshots and open in browser.");
+				messageBodyPart1.setText(String.format("%s%n%s","Please find the attached GudSho Web Automation Report for your kind reference."
+						+ "Note:Please download the attached documents and open in browser for better CSS."));
+				
 	 
 				// Create another object to add another content
 				MimeBodyPart messageBodyPart2 = new MimeBodyPart();

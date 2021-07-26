@@ -5,6 +5,8 @@ package steps;
 import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.SX.Log;
 
 import Pageobjects.frontend.SignUp;
@@ -46,9 +48,9 @@ public class Hooks extends BaseSetup {
 		SignUp sl=new SignUp();
 		ToastandErrormessages ts=new ToastandErrormessages();
 		SignUp.HomePageSignInButton.click();
-		SignUp.PhoneEmailIdField.sendKeys("8555261373");
-		SignUp.PasswordField.sendKeys("sameer6789");
-		SignUp.LoginPageSignInButton.click();
+		SignUp.GmailLogin("sameer.g@contus.in", "Ayesha@1996");
+		WebDriverWait wait=new WebDriverWait(driver,20);
+	    wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		ToastandErrormessages.ToastMessageClose.click();
 		
 		
