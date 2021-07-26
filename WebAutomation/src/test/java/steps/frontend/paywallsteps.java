@@ -1,17 +1,13 @@
 package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
-
 import static org.junit.Assert.assertTrue;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
@@ -23,7 +19,6 @@ import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

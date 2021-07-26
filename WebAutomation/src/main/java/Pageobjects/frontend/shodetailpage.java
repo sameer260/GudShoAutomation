@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Resources.BaseSetup;
 
 public class shodetailpage extends BaseSetup
@@ -132,6 +131,7 @@ public class shodetailpage extends BaseSetup
 			{
 				promonameoncard=PromoNamesofPromoCards.get(i).getText();
 				a.moveToElement(PromoCards.get(i)).click().build().perform();
+				break;
 			}
 		}
 		return promonameoncard;

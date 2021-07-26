@@ -2,9 +2,7 @@ package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import org.openqa.selenium.interactions.Actions;
-
 import Pageobjects.frontend.shodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
@@ -46,7 +44,7 @@ public class videoplayersteps extends BaseSetup {
 	        
 	    }
 
-	   //santhosh
+	  
 	
 
 }

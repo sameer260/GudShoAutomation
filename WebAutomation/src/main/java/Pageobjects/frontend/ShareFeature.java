@@ -2,7 +2,6 @@ package Pageobjects.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -294,6 +292,8 @@ public class ShareFeature extends BaseSetup {
 	public static String copylinkwindowhandleforpromo()
 			throws InterruptedException, HeadlessException, UnsupportedFlavorException, IOException {
 		Actions a =new Actions(driver);
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		String Actual = ToastandErrormessages.ToastMessageText.getText();
 		assertEquals(Actual, "Link Copied!");
 		String myText = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);

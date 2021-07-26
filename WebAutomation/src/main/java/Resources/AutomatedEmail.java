@@ -1,10 +1,8 @@
 package Resources;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -19,6 +17,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.swing.text.StyleConstants.FontConstants;
+
+import org.apache.pdfbox.pdmodel.font.PDFontFactory;
 
 
 
@@ -68,7 +69,7 @@ public class AutomatedEmail
 				message.setFrom(new InternetAddress("sameer.g@contus.in"));
 	 
 				// Set the recipient address
-				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,gracediana.s@contus.in,naveen.l@contus.in,shanthini.b@contus.in,ramya.k@contus.in"));
+				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sameer.g@contus.in"));
 				
 	            
 	            // Add the subject link
@@ -76,10 +77,10 @@ public class AutomatedEmail
 	 
 				// Create object to add multimedia type content
 				BodyPart messageBodyPart1 = new MimeBodyPart();
-	 
+				String msg="Note: Download & open the attached reports using Firefox browser.";
 				// Set the body of email
-				messageBodyPart1.setText(String.format("%s%n%s","Please find the attached GudSho Web Automation Report for your kind reference."
-						+ "Note:Please download the attached documents and open in browser for better CSS."));
+				messageBodyPart1.setText("Please find the attached GudSho Web Automation Report for your kind reference.\t\n\n"
+						+ msg+".\t\n\n\nThanks");
 				
 	 
 				// Create another object to add another content

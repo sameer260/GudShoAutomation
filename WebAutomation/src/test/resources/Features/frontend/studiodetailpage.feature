@@ -1,7 +1,7 @@
 @StudioPage
 Feature: Studio Detail page Scenarios
 
- Scenario Outline: Search any Studio and share studio
+ Scenario Outline: Studio Share
       Given Search any studio <StudioName> and verify it should redirected to correct page
       Then Share studio with all share icons
       
@@ -9,7 +9,7 @@ Feature: Studio Detail page Scenarios
       |StudioName|
       |Sameer    | 
      
- Scenario Outline: Search any Studio and Play trailer from Banner
+ Scenario Outline: Studio banner Redurection
       Given Search any studio <StudioName> and verify it should redirected to correct page
       When Play <shotrailer> from banner and close the player
       Then check redirection of <shotrailer>
@@ -19,7 +19,7 @@ Feature: Studio Detail page Scenarios
       |Sameer    |   Locked |
      
      
-  Scenario Outline: Search any Studio and follow  the Studio
+  Scenario Outline: Studio Follow
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on Follow button
     Then check  toaster message and verify following text
@@ -29,7 +29,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio |   
       
      
-   Scenario Outline: Search any Studio and play promo  and close promo player and check its redirection
+   Scenario Outline: Promo card Redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When verfiy promo player
     Then close player
@@ -39,7 +39,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio |
 
   
-  Scenario Outline: Search any Studio and click sho card
+  Scenario Outline: Sho card redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click sho card and verify its redirected sho detail page
 
@@ -48,7 +48,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio|
 
  
-  Scenario Outline: Search any Studio and select any genre and verify sho card
+  Scenario Outline: Sho card redirection from genere
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click <genere> and verify sho card redirection
 

@@ -8,16 +8,12 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.SX.Log;
-
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.homepage;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
-
-
-
 import Resources.BaseSetup;
 
 

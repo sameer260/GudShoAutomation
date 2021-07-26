@@ -2,7 +2,7 @@
 Feature: Paywall Scenarios
 
    
-  Scenario Outline: Add to watchlist mini popup validation
+  Scenario Outline: Watch List Popup Validation
     Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on add to watchlist
     When Validate the minipopup add to watchlist
@@ -12,7 +12,7 @@ Feature: Paywall Scenarios
       | Talent  |
       
 
-  Scenario Outline: Create Gud mini popup validation
+  Scenario Outline: Promo Gud Popup Validation
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on any promo
     When while playing click on greate gud button
@@ -23,7 +23,7 @@ Feature: Paywall Scenarios
       | Talent  |
       
     
-  Scenario Outline: Buy button redirection validation
+  Scenario Outline: Buy button Popup Validation
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on Buy button
     Then Validate Home page redirection
@@ -32,7 +32,7 @@ Feature: Paywall Scenarios
       | ShoName  |
       | Talent   |
       
-   Scenario Outline: Search any Sho and Share the Sho
+   Scenario Outline: Sho share validation
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Click on Share button
     Then Check share popup is displayed with social ions
@@ -41,7 +41,7 @@ Feature: Paywall Scenarios
       | ShoName |
       | Talent  |
   
-  Scenario Outline: Search any Sho and Share promo
+  Scenario Outline: Promo share validation
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Share <PromoName> and verify share popup and share icons are displayed
 
@@ -50,7 +50,7 @@ Feature: Paywall Scenarios
       | Talent  | Vakeel Sab Theatrical Trailer |
       
    
-  Scenario Outline: Follow Button mini popup validation
+  Scenario Outline: Studio Follow PopUp validation Validation
     Given Search any studio <studioname> and verify it should redirected to correct page
     And From studio detail page click on follow button
     When Validate the minipopup follow button

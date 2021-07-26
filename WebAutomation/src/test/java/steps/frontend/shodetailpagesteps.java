@@ -2,13 +2,10 @@ package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.commonlocatorsandmethods;
@@ -18,8 +15,6 @@ import Pageobjects.frontend.shodetailpage;
 import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -58,7 +53,7 @@ public class shodetailpagesteps extends BaseSetup{
         wait.until(ExpectedConditions.visibilityOf(videoplayer.ShoNameOnPlayer));
         String ShonameonPlayer=videoplayer.ShoNameOnPlayer.getText();
         assertEquals(ShonameonPlayer,shoname);
-        videoplayer.CloseButton.click();
+        videoplayer.CloseButtonforSho.click();
     }
     @When("^Add (.+) in to watchlist and check the toaster message$")
     public void add_in_to_watchlist_and_check_the_toaster_message(String shoname) throws Throwable {

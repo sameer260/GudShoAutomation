@@ -3,13 +3,11 @@ package Pageobjects.frontend;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Resources.BaseSetup;
 
 
@@ -92,7 +90,7 @@ public class SignUp extends BaseSetup
 	public static void GmailLogin(String UserName,String Password) throws InterruptedException
 	{
 		LoginWithGoogleButton.click();
-	    Thread.sleep(4000);
+	    Thread.sleep(5000);
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
 		Iterator<String> i1 = s1.iterator();

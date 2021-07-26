@@ -12,7 +12,7 @@ Feature: GudSho Home Page
   Scenario: Home Banner Redirection
     Given Select first card from home banner and check sho detail page redirection
    
-  Scenario: select promo card from and verify redirection
+  Scenario: Promo Card redirection
     Given Select first promo card from promo row
     Then verify redirection of promo player
 
