@@ -9,10 +9,10 @@ Feature: GudSho Home Page
     Given verify user profile icon
     Then verify profile icon page
  
-  Scenario: Home Banner Redirection
+  Scenario: Home page Banner Redirection
     Given Select first card from home banner and check sho detail page redirection
    
-  Scenario: Promo Card redirection
+  Scenario: Promo Card Redirection
     Given Select first promo card from promo row
     Then verify redirection of promo player
 

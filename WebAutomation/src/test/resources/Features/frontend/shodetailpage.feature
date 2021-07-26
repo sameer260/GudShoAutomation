@@ -1,7 +1,7 @@
 @ShodetailPage
-Feature: sho detail page scenarios
+Feature: Sho Detail Page Scenarios
 
-  Scenario Outline: Buy Sho and Play
+  Scenario Outline: Sho-Purchase & Payment
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Buy the sho using <PaymentMode> with <PaymentScenario>
     Then Verify after payment <ShoName> is playing and close the player
@@ -10,7 +10,7 @@ Feature: sho detail page scenarios
       | ShoName          | PaymentMode | PaymentScenario |
       | Talent           | Card        | Success         |
       
-  Scenario Outline: Promo Gud verification on home page
+  Scenario Outline: Promo Gud
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Play <PromoName> and like promo
     Then On home page check liked <PromoName> is showing in my gud promos
@@ -19,7 +19,7 @@ Feature: sho detail page scenarios
       | ShoName | PromoName                     |
       | Talent  | Vakeel Sab Theatrical Trailer |
     
-  Scenario Outline: Sho watchlist verification on home page
+  Scenario Outline: Sho Watchlist
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Add <ShoName> in to watchlist and check the toaster message
     Then On home page check the added watchlist <ShoName>
@@ -28,7 +28,7 @@ Feature: sho detail page scenarios
       | ShoName |
       | Talent  |
 
-  Scenario Outline: Sho share
+  Scenario Outline: Sho Page Social Media Icons Redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Click on Share button
     Then Share the <ShareType> using all social icons
@@ -37,7 +37,7 @@ Feature: sho detail page scenarios
       | ShoName | ShareType  |
       | Talent  | shoshare   |
   
-  Scenario Outline: Promo Share
+  Scenario Outline: Promo Player Social Media Icons Redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Hover on <PromoName> card and share promo <ShareType> using all shares
 
@@ -45,7 +45,7 @@ Feature: sho detail page scenarios
       | ShoName | PromoName                     | ShareType  |
       | Talent  | Vakeel Sab Theatrical Trailer | promoshare |
 
-  Scenario Outline: Studio link redirection
+  Scenario Outline: Studio Link Redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Click on Studio link and check redirected to studio detail page
 
@@ -53,7 +53,7 @@ Feature: sho detail page scenarios
       | ShoName |
       | Talent  |
 
-  Scenario Outline: Continue Watching verification on home page
+  Scenario Outline: Continue Watching 
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Play watch free content and close the player
     Then On Home Page check continue wathing is showing <ShoName>

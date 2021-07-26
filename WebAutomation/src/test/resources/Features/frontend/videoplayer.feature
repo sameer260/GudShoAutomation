@@ -1,7 +1,7 @@
 @VideoPlayer
 Feature: Video Player Scenarios
 
-Scenario Outline: Player user Actions
+Scenario Outline: Player Actions
 Given Search any <ShoName> and verfiy its redirected to correct page
 When Play promo
 Then Pause Video at <runningtime> and play agian

@@ -134,6 +134,7 @@ public class paywallsteps extends BaseSetup {
 	    public void check_share_popup_is_displayed_with_social_ions() throws Throwable {
 		 wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 	       assertTrue(ShareFeature.SharePopup.isDisplayed());
+	       wait.until(ExpectedConditions.visibilityOf(ShareFeature.FacebookShareIcon));
 	       assertTrue(ShareFeature.FacebookShareIcon.isDisplayed());
 	       assertTrue(ShareFeature.TwitterShare.isDisplayed());
 	       assertTrue(ShareFeature.WhatsappShare.isDisplayed());

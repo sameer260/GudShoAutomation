@@ -2,7 +2,7 @@
 Feature: Paywall Scenarios
 
    
-  Scenario Outline: Watch List Popup Validation
+  Scenario Outline: Watch List Popup 
     Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on add to watchlist
     When Validate the minipopup add to watchlist
@@ -12,7 +12,7 @@ Feature: Paywall Scenarios
       | Talent  |
       
 
-  Scenario Outline: Promo Gud Popup Validation
+  Scenario Outline: Promo icon Gud Popup 
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on any promo
     When while playing click on greate gud button
@@ -23,7 +23,7 @@ Feature: Paywall Scenarios
       | Talent  |
       
     
-  Scenario Outline: Buy button Popup Validation
+  Scenario Outline: Buy Button Popup
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on Buy button
     Then Validate Home page redirection
@@ -32,7 +32,7 @@ Feature: Paywall Scenarios
       | ShoName  |
       | Talent   |
       
-   Scenario Outline: Sho share validation
+   Scenario Outline: Sho Page Social Media Icons Redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Click on Share button
     Then Check share popup is displayed with social ions
@@ -41,7 +41,7 @@ Feature: Paywall Scenarios
       | ShoName |
       | Talent  |
   
-  Scenario Outline: Promo share validation
+  Scenario Outline: Promo Player Social Media Icons Redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Share <PromoName> and verify share popup and share icons are displayed
 
@@ -50,7 +50,7 @@ Feature: Paywall Scenarios
       | Talent  | Vakeel Sab Theatrical Trailer |
       
    
-  Scenario Outline: Studio Follow PopUp validation Validation
+  Scenario Outline: Follow Studio PopUp
     Given Search any studio <studioname> and verify it should redirected to correct page
     And From studio detail page click on follow button
     When Validate the minipopup follow button

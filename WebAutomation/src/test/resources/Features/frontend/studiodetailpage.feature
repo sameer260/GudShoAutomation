@@ -9,7 +9,7 @@ Feature: Studio Detail page Scenarios
       |StudioName|
       |Sameer    | 
      
- Scenario Outline: Studio banner Redurection
+ Scenario Outline: Studio Banner Redirection
       Given Search any studio <StudioName> and verify it should redirected to correct page
       When Play <shotrailer> from banner and close the player
       Then check redirection of <shotrailer>
@@ -19,7 +19,7 @@ Feature: Studio Detail page Scenarios
       |Sameer    |   Locked |
      
      
-  Scenario Outline: Studio Follow
+  Scenario Outline: Follow Studio
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on Follow button
     Then check  toaster message and verify following text
@@ -29,7 +29,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio |   
       
      
-   Scenario Outline: Promo card Redirection
+   Scenario Outline: Promo Card Redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When verfiy promo player
     Then close player
@@ -39,7 +39,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio |
 
   
-  Scenario Outline: Sho card redirection
+  Scenario Outline: Sho Card Redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click sho card and verify its redirected sho detail page
 
@@ -48,7 +48,7 @@ Feature: Studio Detail page Scenarios
       | Trail Studio|
 
  
-  Scenario Outline: Sho card redirection from genere
+  Scenario Outline: Sho Card Genre Redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click <genere> and verify sho card redirection
 
