@@ -15,6 +15,7 @@ import Pageobjects.frontend.shodetailpage;
 import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -133,6 +134,13 @@ public class shodetailpagesteps extends BaseSetup{
         a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
         wait.until(ExpectedConditions.visibilityOf(videoplayer.CloseButtonforSho));
         videoplayer.CloseButtonforSho.click();
+    }
+    @And("^On sho detail page verify watch now button should change to resume$")
+    public void on_sho_detail_page_verify_watch_now_button_should_change_to_resume() throws Throwable {
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+        String str=shodetailpage.ResumeButtonForSho.getText();
+        log.info(str);
+        assertEquals(str,"Resume");
     }
 
     @Then("^On Home Page check continue wathing is showing (.+)$")

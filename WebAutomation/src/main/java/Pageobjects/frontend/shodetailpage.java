@@ -47,6 +47,9 @@ public class shodetailpage extends BaseSetup
 	@FindBy(xpath="//li[@class='ng-star-inserted']/button")
 	public static WebElement BuyButton;
 	
+	@FindBy(xpath="//li[@class='ng-star-inserted']/button/span")
+	public static WebElement ResumeButtonForSho;
+	
 	@FindBy(xpath="//body/app-root[1]/div[1]/app-sho-details[1]/main[1]/section[1]/div[2]/div[1]/div[2]/div[2]/ul[1]/app-gud-play-button[1]/ul[1]/li[2]/div[1]/div[1]")
 	public static WebElement HeaderBuyButton;
 	

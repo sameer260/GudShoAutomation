@@ -10,6 +10,7 @@ Feature: Sho Detail Page Scenarios
       | ShoName          | PaymentMode | PaymentScenario |
       | Talent           | Card        | Success         |
       
+      
   Scenario Outline: Promo Gud
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Play <PromoName> and like promo
@@ -56,6 +57,7 @@ Feature: Sho Detail Page Scenarios
   Scenario Outline: Continue Watching 
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Play watch free content and close the player
+    And On sho detail page verify watch now button should change to resume
     Then On Home Page check continue wathing is showing <ShoName>
 
     Examples: 

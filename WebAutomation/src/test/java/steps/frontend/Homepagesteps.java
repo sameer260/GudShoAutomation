@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
+import Pageobjects.frontend.accountandsettingspage;
 import Pageobjects.frontend.audioplayer;
 import Pageobjects.frontend.commonlocatorsandmethods;
 import Pageobjects.frontend.homepage;
@@ -19,6 +20,7 @@ import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class Homepagesteps extends BaseSetup {
 	
@@ -30,6 +32,7 @@ public class Homepagesteps extends BaseSetup {
 	  ToastandErrormessages toaster=new ToastandErrormessages();
 	  audioplayer audio=new audioplayer();
 	  studiodetailpage studio=new studiodetailpage();
+	  accountandsettingspage ac=new accountandsettingspage();
 	  WebDriverWait wait=new WebDriverWait(driver,20);
 	  JavascriptExecutor executor = (JavascriptExecutor)driver;
 	  
@@ -39,11 +42,11 @@ public class Homepagesteps extends BaseSetup {
 	   	executor.executeScript("arguments[0].click();", notify);
 	    	Thread.sleep(2000);
 	    	}
-		@Then("^verify notification page redirected to correct page$")
+		@When("^verify notification page redirected to correct page$")
 	    public void verify_notification_page_redirected_to_correct_page() throws Throwable {
 			homepage.notificationsettingbox.isDisplayed();
 			String actual=homepage.NotificationSettingText.getText();
-			assertEquals(actual,"Manage your Email, SMS, In-app and push notifications");
+			assertEquals(actual,"Manage your Email, SMS, In-app and push notification");
 			}
 
 	    @Given("^verify user profile icon$")
@@ -107,6 +110,13 @@ public class Homepagesteps extends BaseSetup {
 	     Thread.sleep(3000);
 	     videoplayer.PromoNameonPlayer.isDisplayed();
 	      
+	    }
+	    @Then("^Click on notifications link and it should redirect to notifications tab$")
+	    public void click_on_notifications_link_and_it_should_redirect_to_notifications_tab() throws Throwable {
+	    	accountandsettingspage.NotificationSettingLink.click();
+	    	assertTrue(accountandsettingspage.NotificationsTab.isDisplayed());
+	    	wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.NotificationElements));
+	    	assertTrue(accountandsettingspage.NotificationElements.isDisplayed());
 	    }
 
 

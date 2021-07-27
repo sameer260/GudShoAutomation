@@ -578,3 +578,25 @@
 2021-07-26 20:22:25 INFO  videoplayer:119 - Video paused at:00:10
 2021-07-26 20:22:31 INFO  videoplayer:132 - 00:25
 2021-07-26 20:22:33 INFO  videoplayer:132 - 00:37
+2021-07-27 16:09:44 INFO  homepage:142 - Sent Text in the Home Page is Paytm
+2021-07-27 16:09:47 INFO  homepage:148 - The Auto suggestive dropdown shows:Paytm
+2021-07-27 16:09:50 INFO  commonSteps:49 - paytm
+2021-07-27 16:10:01 INFO  shodetailpagesteps:142 - Resume
+2021-07-27 16:12:11 INFO  homepage:142 - Sent Text in the Home Page is Paytm
+2021-07-27 16:12:14 INFO  homepage:148 - The Auto suggestive dropdown shows:Paytm
+2021-07-27 16:12:16 INFO  commonSteps:49 - paytm
+2021-07-27 16:12:27 INFO  shodetailpagesteps:142 - Resume
+2021-07-27 16:13:47 INFO  homepage:142 - Sent Text in the Home Page is Paytm
+2021-07-27 16:13:50 INFO  homepage:148 - The Auto suggestive dropdown shows:Paytm
+2021-07-27 16:13:52 INFO  commonSteps:49 - paytm
+2021-07-27 16:14:03 INFO  shodetailpagesteps:142 - Resume
+2021-07-27 16:14:04 INFO  shodetailpagesteps:155 - Paytm
+2021-07-27 18:08:25 INFO  homepage:142 - Sent Text in the Home Page is Paytm
+2021-07-27 18:08:28 INFO  homepage:148 - The Auto suggestive dropdown shows:Paytm
+2021-07-27 18:08:29 INFO  commonSteps:49 - paytm
+2021-07-27 18:08:40 INFO  shodetailpagesteps:142 - Watch Now
+2021-07-27 18:12:05 INFO  homepage:142 - Sent Text in the Home Page is Paytm
+2021-07-27 18:12:08 INFO  homepage:148 - The Auto suggestive dropdown shows:Paytm
+2021-07-27 18:12:09 INFO  commonSteps:49 - paytm
+2021-07-27 18:12:20 INFO  shodetailpagesteps:142 - Resume
+2021-07-27 18:12:20 INFO  shodetailpagesteps:155 - Paytm

@@ -69,8 +69,9 @@ public class AutomatedEmail
 				message.setFrom(new InternetAddress("sameer.g@contus.in"));
 	 
 				// Set the recipient address
-				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("gracediana.s@contus.in,rajagopal.n@contus.in,shankar.e@contus.in"));
-				message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,naveen.l@contus.in,shanthini.b@contus.in"));
+				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sameer.g@contus.in"));
+				//message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("gracediana.s@contus.in,rajagopal.n@contus.in,shankar.e@contus.in"));
+				//message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,naveen.l@contus.in,shanthini.b@contus.in"));
 				
 	            
 	            // Add the subject link
@@ -80,32 +81,36 @@ public class AutomatedEmail
 				BodyPart messageBodyPart1 = new MimeBodyPart();
 				String msg="Note: Download & open the attached reports using Firefox browser.";
 				// Set the body of email
-				messageBodyPart1.setText("Please find the attached GudSho Web Automation Report for your kind reference.\t\n\n"
+				messageBodyPart1.setText("Hi Team,\t\n\n\nPlease find the attached GudSho Web Automation Report for your kind reference.\t\n\n"
 						+ msg+".\t\n\n\nThanks");
 				
 	 
 				// Create another object to add another content
 				MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 				MimeBodyPart messageBodyPart3 = new MimeBodyPart();
+				MimeBodyPart messageBodyPart4 = new MimeBodyPart();
 				
 	 
 				// Mention the file which you want to send
-				String filename = System.getProperty("user.dir")+"./Report/Spark.html";
-				String filename1 = System.getProperty("user.dir")+"./target/cucumber-reports/htmlreports.html";
-					 
+				String filename = System.getProperty("user.dir")+"/AllReports/ExtentReport/Spark.html";
+				String filename1 = System.getProperty("user.dir")+"/target/cucumber-reports/htmlreports.html";
+				String PdfReport=System.getProperty("user.dir")+"/AllReports/PdfReports/ExtentPdf.pdf"; 
 				// Create data source and pass the filename
 				DataSource source = new FileDataSource(filename);
 				DataSource source1 = new FileDataSource(filename1);
+				DataSource source2 = new FileDataSource(PdfReport);
 				
 	 
 				// set the handler
 				messageBodyPart2.setDataHandler(new DataHandler(source));
 				messageBodyPart3.setDataHandler(new DataHandler(source1));
+				messageBodyPart4.setDataHandler(new DataHandler(source2));
 				
 	 
 				// set the file
-				messageBodyPart2.setFileName("GudSho_Web_Automation"+formatter.format(date));
-				messageBodyPart3.setFileName("GudSho_Web_JVM_Automation"+formatter.format(date));
+				messageBodyPart2.setFileName("GudSho_Web_Automation "+formatter.format(date));
+				messageBodyPart3.setFileName("GudSho_Web_Html_Reports "+formatter.format(date));
+				messageBodyPart4.setFileName("GudSho_Web_PDF_Reports "+formatter.format(date));
 			
 	 
 				// Create object of MimeMultipart class
@@ -115,12 +120,14 @@ public class AutomatedEmail
 				// add body part 1
 				multipart.addBodyPart(messageBodyPart2);
 				multipart.addBodyPart(messageBodyPart3);
+				multipart.addBodyPart(messageBodyPart4);
 				
 	 
 				// add body part 2
 				multipart.addBodyPart(messageBodyPart1);
 				multipart.addBodyPart(messageBodyPart3);
-				messageBodyPart3.attachFile(filename1);
+				multipart.addBodyPart(messageBodyPart4);
+				//messageBodyPart3.attachFile(filename1);
 				
 	 
 				// set the content

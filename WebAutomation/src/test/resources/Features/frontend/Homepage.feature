@@ -3,7 +3,8 @@ Feature: GudSho Home Page
 
   Scenario: Notification Page Redirection
     Given verify notification tab
-    Then verify notification page redirected to correct page
+    When verify notification page redirected to correct page
+    Then Click on notifications link and it should redirect to notifications tab
 
   Scenario: User Profile
     Given verify user profile icon

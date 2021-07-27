@@ -15,29 +15,14 @@ public class studiodetailpage extends BaseSetup {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//div[@class='edit-title']")
+	@FindBy(xpath="//div[@class='edit-title']") //div[@class='studiodetail-left']/h4
 	public static WebElement StudioNameInStudioPage;
 	
-	@FindBy(xpath="//div[@class='followers-btn']//app-follow-studios/button")
+	@FindBy(xpath="//div[@class='followers-btn']//app-follow-studios/button") //li[@class='follow']//app-follow-studios/button
 	public static WebElement FollowButton;
 	
-	@FindBy(xpath="//div[@class='follow-btn']//app-follow-studios/button")
-	public static WebElement HeaderFollowButton;
-	
-	@FindBy(xpath="//div[@class='hover-sho-detail ng-star-inserted']/div/h5")
-	public static List<WebElement> ShoNamesOnCards;
-	
-	@FindBy(xpath="//div[@class='mat-ripple card-img cursor auto-image']")
-	public static List<WebElement> ShoCards;
-	
-	@FindBy(xpath="//div[@class='details-btns flex']/div[1]")
-	public static List<WebElement> WatchListIcon;
-	
-	@FindBy(xpath="//h4[@class='card-title text-control']")
-	public static List<WebElement> AudioNames;
-	
-	@FindBy(xpath="//div[@class='card-main audio-card-content']/div[1]")
-	public static List<WebElement> AudioCards;
+	@FindBy(xpath="//li[@class='share flex align-items-center justify-content-center cursor']")
+	public static WebElement StudioShareButton;
 	
 	@FindBy(xpath="//div[@class='swiper-slide ng-star-inserted swiper-slide-active']/div/div/div/h3/span[1]")
 	public static WebElement ShoNamesOnStudioBanner;
@@ -52,23 +37,16 @@ public class studiodetailpage extends BaseSetup {
 	public static WebElement clickpromo;
 	
 	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[1]/div[1]/div[3]/app-gud-slider[2]/div[1]/div[2]/swiper[1]/div[1]/app-gud-card[1]/div[1]")
-	public static WebElement shocard1;
+	public static WebElement shocard1;//div[@class='release-card card-slider ng-star-inserted']/div[2]/swiper/div/app-gud-card/div/div/div
 	
 	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[1]/div[1]/div[3]/div[1]/app-gud-card[1]/div[1]/div[1]/div[1]")
-	public static WebElement selectshocardfromgenre;
-	
-	@FindBy(xpath="//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
-	public static WebElement selectshonameonshocard;
-	
+	public static WebElement selectshocardfromgenre;//div[@class='create-shos-series']/div/app-gud-card/div/div/div
+		
 	@FindBy(xpath="//ul[@class='swiper-wrapper choose-genre']/li")
 	public static List<WebElement> selectgenre;
 	
-	
-
-	
-
 	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[1]/div[1]/div[3]/app-gud-slider[1]/div[1]/div[2]/swiper[1]/div[1]/app-gud-card[1]/div[1]/div[1]/div[2]/h4[1]")
-	public static WebElement verifypromonameonstudiopage;
+	public static WebElement verifypromonameonstudiopage; //div[starts-with(@class,'card-footer ng-tns-')]/h4
 
 	@FindBy(xpath="//*[@class='swiper-container swiper-container-initialized swiper-container-horizontal']//following::a[1]//child::img")
 	public static WebElement selectshonamefromstudiopage;

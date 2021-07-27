@@ -3,6 +3,7 @@ package Runner;
 
 
 import java.io.File;
+
 import java.io.IOException;
 import io.cucumber.junit.CucumberOptions;
 import java.util.ArrayList;
@@ -11,15 +12,12 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.ExtentSparkReporterConfig;
-
 import Resources.AutomatedEmail;
 import io.cucumber.junit.Cucumber;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import net.masterthought.cucumber.sorting.SortingMethod;
+
 
 
 	@RunWith(Cucumber.class)
@@ -36,10 +34,12 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 		
 	public class RunnerTest 
 	{	
-		static ExtentSparkReporter spark ;
+		 
+		
 		@BeforeClass
 		public static void logger() throws IOException {
-	
+			
+			        
 			PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/main/java/Resources/log4j.properties");
 
 		}
