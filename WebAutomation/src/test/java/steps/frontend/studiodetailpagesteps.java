@@ -37,19 +37,20 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    public void share_studio_with_all_share_icons() throws Throwable {
 	        ShareFeature.Studioshare();
 	    }
-	 @When("^Play (.+) from banner and close the player$")
-	    public void play_from_banner_and_close_the_player(String shotrailer) throws Throwable {
-	       studiodetailpage.BannerImageClick(shotrailer);
-	       Thread.sleep(3000);
-	    }
+	 
 
-	 @Then("^check redirection of (.+)$")
-	    public void check_redirection_of(String shotrailer) throws Throwable {
-	        Actions a=new Actions(driver);
-	        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
-	        String Shonameonplayer= videoplayer.ShoNameOnPlayer.getText();
-	        assertEquals(shotrailer,Shonameonplayer);
+	 @Then("^Click on Banner image and verify redirection to correct sho detail page$")
+	    public void click_on_banner_image_and_verify_redirection_to_correct_sho_detail_page() throws Throwable {
+		 String shonameonstudiobanner=studiodetailpage.ShoNameonStudioBanner.getAttribute("alt");   
+		 studiodetailpage.StudioBanner.click();
+		   String shonameonshodetailpage = shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+			log.info(shonameonshodetailpage);
+			assertTrue(shonameonshodetailpage.equalsIgnoreCase(shonameonstudiobanner));
 	        
+	    }
+	 @When("^Click studio share icon$")
+	    public void click_studio_share_icon() throws Throwable {
+	        studiodetailpage.StudioShareButton.click();
 	    }
 	 
 	 
@@ -104,26 +105,25 @@ public class studiodetailpagesteps  extends BaseSetup{
 		   public void verfiy_promo_player() throws Throwable {
 		       String actualpromotext= studiodetailpage.verifypromonameonstudiopage.getText();
 		       log.info(actualpromotext);
-		       studiodetailpage.clickpromo.click();
-		       Thread.sleep(10000);
 		       Actions a=new Actions(driver);
+		       a.moveToElement(studiodetailpage.clickpromo).click().build().perform();
+		       Thread.sleep(10000);
 		       a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		       String Expectedpromotext=videoplayer.Promoname();
 		       log.info(Expectedpromotext);
-		assertEquals(actualpromotext,Expectedpromotext);
+		       assertEquals(actualpromotext,Expectedpromotext);
 
 		}
 
 		@When("^click sho card and verify its redirected sho detail page$")
 		   public void click_sho_card_and_verify_its_redirected_sho_detail_page() throws Throwable {
-		commonlocatorsandmethods.scrolldownm();
+		//commonlocatorsandmethods.scrolldownm();
 		Actions a=new Actions(driver);
-		WebElement shocard11=wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.shocard1));
+		wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.shocard1));
 		a.moveToElement(studiodetailpage.shocard1).build().perform();
 		String actualsho=studiodetailpage.selectshonamefromstudiopage.getAttribute("alt");
 		log.info(actualsho);
-		a.moveToElement(studiodetailpage.selectshonamefromstudiopage).build().perform();
-		studiodetailpage.shocard1.click();
+		a.moveToElement(studiodetailpage.selectshonamefromstudiopage).click().build().perform();
 		String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 		log.info(expectedsho);
 		assertTrue(actualsho.equalsIgnoreCase(expectedsho));

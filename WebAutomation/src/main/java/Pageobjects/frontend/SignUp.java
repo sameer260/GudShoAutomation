@@ -74,7 +74,7 @@ public class SignUp extends BaseSetup
 	
 	
 	//Gmail
-	@FindBy(xpath="//button[starts-with(@class,'button is-icon white login e-large width-full ng-tns-')]")
+	@FindBy(xpath="//div[starts-with(@class,'login-inner sign-up-choose ng-tns-')]/button[1]")
 	public static WebElement LoginWithGoogleButton;
 	
 	@FindBy(id="identifierId")
