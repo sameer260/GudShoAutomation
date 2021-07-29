@@ -5,7 +5,7 @@ Feature: Paywall Scenarios
   Scenario Outline: Watch List Popup 
     Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on add to watchlist
-    When Validate the minipopup add to watchlist
+    Then Vaildate Signin Popup
 
     Examples: 
       | ShoName |
@@ -16,7 +16,7 @@ Feature: Paywall Scenarios
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on any promo
     When while playing click on greate gud button
-    Then Validate the minipopup Create gud
+    Then Vaildate Signin Popup
 
     Examples: 
       | ShoName |
@@ -26,7 +26,7 @@ Feature: Paywall Scenarios
   Scenario Outline: Buy Button Popup
      Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on Buy button
-    Then Validate Home page redirection
+    Then Vaildate Signin Popup
 
     Examples: 
       | ShoName  |
@@ -53,7 +53,7 @@ Feature: Paywall Scenarios
   Scenario Outline: Follow Studio PopUp
     Given Search any studio <studioname> and verify it should redirected to correct page
     And From studio detail page click on follow button
-    When Validate the minipopup follow button
+    Then Vaildate Signin Popup
 
     Examples: 
       | studioname      |

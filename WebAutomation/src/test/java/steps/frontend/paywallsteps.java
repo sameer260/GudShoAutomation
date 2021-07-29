@@ -44,7 +44,7 @@ public class paywallsteps extends BaseSetup {
 
 	}
 
-	@When("^Validate the minipopup add to watchlist$")
+	/*@When("^Validate the minipopup add to watchlist$")
 	public void validate_the_minipopup_add_to_watchlist() throws Throwable {
 		shodetailpage.SignInPopUp.isDisplayed();
 		shodetailpage.SignInPopUpHeadderText.isDisplayed();
@@ -59,9 +59,9 @@ public class paywallsteps extends BaseSetup {
 		wait.until(ExpectedConditions.visibilityOf(home));
 		home.isDisplayed();
 
-	}
+	}*/
 
-	@Then("^Validate the minipopup Create gud$")
+	/*@Then("^Validate the minipopup Create gud$")
 	public void validate_the_minipopup_create_gud() throws Throwable {
 		shodetailpage.SignInPopUp.isDisplayed();
 		shodetailpage.SignInPopUpHeadderText.isDisplayed();
@@ -73,9 +73,9 @@ public class paywallsteps extends BaseSetup {
 		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
 		wait.until(ExpectedConditions.visibilityOf(home));
 		home.isDisplayed();
-	}
+	}*/
 
-	@When("^Validate the minipopup follow button$")
+	/*@When("^Validate the minipopup follow button$")
 	public void validate_the_minipopup_follow_button() throws Throwable {
 		shodetailpage.SignInPopUp.isDisplayed();
 		shodetailpage.SignInPopUpHeadderText.isDisplayed();
@@ -90,7 +90,7 @@ public class paywallsteps extends BaseSetup {
 		wait.until(ExpectedConditions.visibilityOf(home));
 		home.isDisplayed();
 
-	}
+	}*/
 
 	@When("^while playing click on greate gud button$")
 	public void while_playing_click_on_greate_gud_button() throws Throwable {
@@ -109,14 +109,14 @@ public class paywallsteps extends BaseSetup {
 
 	}
 
-	@Then("^Validate Home page redirection$")
+	/*@Then("^Validate Home page redirection$")
 	public void validate_home_page_redirection() throws Throwable {
 		Thread.sleep(2000);
 		assertEquals("Please login to continue", ToastandErrormessages.ToastMessageText.getText());
 		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
 		wait.until(ExpectedConditions.visibilityOf(home));
 		home.isDisplayed();
-	}
+	}*/
 
 	@And("^From sho detail page click on Buy button$")
 	public void from_sho_detail_page_click_on_buy_button() throws Throwable {
@@ -145,6 +145,12 @@ public class paywallsteps extends BaseSetup {
 		   shodetailpage.PromoCardShare(promoname);
 		   wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 	       assertTrue(ShareFeature.SharePopup.isDisplayed());
+	    }
+	 @Then("^Vaildate Signin Popup$")
+	    public void vaildate_signin_popup() throws Throwable {
+		 wait.until(ExpectedConditions.visibilityOf(SignUp.SignInPoup));
+	        assertTrue(SignUp.SignInPoup.isDisplayed());
+	        assertTrue(SignUp.HelloThereText.isDisplayed());
 	    }
 	 
 	

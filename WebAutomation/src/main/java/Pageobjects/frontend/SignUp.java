@@ -51,9 +51,6 @@ public class SignUp extends BaseSetup
 	@FindBy(xpath="//div[@class='user-page-logo']")
 	public static WebElement LoginPageGudShoLogo;
 	
-	@FindBy(xpath="//div[@class='form-container sign-in']/h1")
-	public static WebElement HelloThereText;
-	
 	@FindBy(xpath="//div[@class='form-container sign-in']/p")
 	public static WebElement DescriptionText;
 	
@@ -71,6 +68,15 @@ public class SignUp extends BaseSetup
 	
 	@FindBy(xpath="//div[@class='back-arrow']/a")
 	public static WebElement BackCursorButton;
+	
+	
+	//New Signin Design
+	
+	@FindBy(xpath="//div[starts-with(@class,'login-inner sign-up-choose ng-tns-')]")
+	public static WebElement SignInPoup;
+	
+	@FindBy(xpath="//h3[text()='Hello there!']")
+	public static WebElement HelloThereText;
 	
 	
 	//Gmail
