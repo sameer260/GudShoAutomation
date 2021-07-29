@@ -70,11 +70,6 @@ Feature: Paywall Scenarios
       | Sameer     | 
       
       
-      
-      
-      
-      
-      
       Scenario Outline: Studio Page Social Media Icons Redirection
     Given Search any studio <studioname> and verify it should redirected to correct page
     When Click studio share icon
@@ -93,14 +88,7 @@ Feature: Paywall Scenarios
       | studioname      |
       | santii's studio |  
       
-    Scenario Outline: Follow Studio PopUp
-    Given Search any studio <studioname> and verify it should redirected to correct page
-    And From studio detail page click on follow button
-    Then Vaildate Signin Popup
-
-    Examples: 
-      | studioname      |
-      | santii's studio |    
+      
       
       
         
