@@ -1,2 +1,12 @@
 /WebAutomation/
 *.AllReports
+*.Logs
+*.target
+*.src/test/resources/extent-config/xml
+*.src/test/resources/extent.properties
+*.src/test/resources/pdf-config.json
+*.src/test/resources/pdf-config.xml
+*.sr/test/java/Runner
+*src/main/java/Resources/AutomatedEmail.java
+*src/main/java/Resources/log4j.properties
+
