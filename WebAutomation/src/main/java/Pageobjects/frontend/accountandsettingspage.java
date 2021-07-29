@@ -21,6 +21,4 @@ public class accountandsettingspage extends BaseSetup
 	
 	@FindBy(xpath="//div[@class='notify-wrapper']")
 	public static WebElement NotificationElements;
-	
-	
 }
