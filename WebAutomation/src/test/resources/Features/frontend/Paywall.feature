@@ -67,5 +67,14 @@ Feature: Paywall Scenarios
 
     Examples: 
       | studioname |
+      | Sameer     | 
+      
+      Scenario Outline: Studio Page Social Media Icons Redirection
+    Given Search any studio <studioname> and verify it should redirected to correct page
+    When Click studio share icon
+    Then Check share popup is displayed with social ions
+
+    Examples: 
+      | studioname |
       | Sameer     |   
        
