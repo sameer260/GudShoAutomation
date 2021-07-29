@@ -77,4 +77,12 @@ Feature: Paywall Scenarios
     Examples: 
       | studioname |
       | Sameer     |   
+      
+     Scenario Outline: Promo Player Social Media Icons Redirection
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Share <PromoName> and verify share popup and share icons are displayed
+
+    Examples: 
+      | ShoName | PromoName                     |
+      | Talent  | Vakeel Sab Theatrical Trailer |  
        
