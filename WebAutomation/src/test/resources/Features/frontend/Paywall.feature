@@ -69,20 +69,5 @@ Feature: Paywall Scenarios
       | studioname |
       | Sameer     | 
       
-      Scenario Outline: Studio Page Social Media Icons Redirection
-    Given Search any studio <studioname> and verify it should redirected to correct page
-    When Click studio share icon
-    Then Check share popup is displayed with social ions
-
-    Examples: 
-      | studioname |
-      | Sameer     |   
-      
-     Scenario Outline: Promo Player Social Media Icons Redirection
-    Given Search any <ShoName> and verfiy its redirected to correct page
-    Then Share <PromoName> and verify share popup and share icons are displayed
-
-    Examples: 
-      | ShoName | PromoName                     |
-      | Talent  | Vakeel Sab Theatrical Trailer |  
+       
        
